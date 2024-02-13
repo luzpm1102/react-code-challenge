@@ -17,11 +17,12 @@ This challenge contains 3 exercises that will help us to understand your way of 
 
 1. **FORK** this repo, **DO NOT** clone it
 2. Once you forked it, before to start change the `author` within the `package.json` file and add your name
-3. To start the challenge perform the first commit with the `author` change
+3. Install the dependencies, run the `dev` script and go to: `http://localhost:5173/`
+4. To start the challenge perform the first commit with the `author` change
 >
 > We will consider this commit as the start of the test, you will have 120 min to complete this challenge.
 >We will only consider the commits you make that are within the 120 min range, you will have only 8 minutes of margin (because of the time it may take to make the commits).
-4. Please, **DO NOT** use github copilot for this challenge, yes I know we use it daily but for this test, we want to evaluate your skills.
+5. Please, **DO NOT** use github copilot for this challenge, yes I know we use it daily but for this test, we want to evaluate your skills.
 
 ---
 
@@ -51,7 +52,7 @@ In order to properly assess the candidate's skills, problem-solving abilities, c
 ---
 
 ### Have fun!
-I know, all of this sounds kinda picky, but at the end of the day we consider that those are basics of any software engineer, and you'll be facing this kind og challenges daily, but we hope you love your job as we do, so don't worry if you don't complete the whole exercise, we value the effort and we will only evaluate the code you write, not if you complete the 100% of each exercise.
+I know, all of this sounds kinda picky, but at the end of the day we consider that those are basics of any software engineer, and you'll be facing this kind of challenges daily, but we hope you love your job as much as we do, so don't worry if you couldn't complete the whole exercise, we value the effort and we will only evaluate the code you write, not if you complete the 100% of each exercise.
 
 ---
 
@@ -69,7 +70,7 @@ Wiss has given them the following conditions:
 2. Once you hit the first dummy, you can only hit dummies that are to the right of it, not to its left.
 3. The subtraction of the number of the first dummy minus the second must not be negative.
 
-As punishment they must change the Bills sheets according to the subtraction between the number of hits of the first dummy minus the second. So you must concentrate on making sure that the subtraction is always the smallest possible.
+As punishment they must change the Bills sheets according to the subtraction between the number of hits of the first dummy minus the second. So you must concentrate on making sure that the subtraction is always the smallest possible. (You wouldn't like to change Mr. Bills' sheets many times, would you?)
 
 > 
 > To make sure your code works, we have added some test cases.
@@ -83,10 +84,10 @@ The minimum times they should change Bills sheets is by hitting the first dummy 
 
 **Description:**
 Complete the `fewerChangeSheets()` function located at `src/modules/logical-exercise/result.ts` that accept following parameter(s):
-* int dummies[n]: a list of dummies (remember, the length of the array represent how many dummies appeared, and each position represent the number of hits each one can take)
+* int dummies[n] array: a list of dummies (remember, the length of the array represent how many dummies appeared, and each position represent the number of hits each one can take)
 
 **Returns:**
-* int: the minimum loss possible
+* int: the minimum possible change of sheets
 
 **Constraints:**
 - All the number of hits are distinct.
