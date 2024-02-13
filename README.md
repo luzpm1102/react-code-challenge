@@ -58,6 +58,9 @@ I know, all of this sounds kinda picky, but at the end of the day we consider th
 ## Exercises:
 
 ### 1. Logical excercise
+
+![Goku and Vegeta are training with Wiss](src/assets/goku-vegeta-trainning.png)
+
 Goku and Vegeta are training with Wiss to increase their powers using training dummies.
 Each turn, the number of dummies is randomized and each dummy has a number written on it that represents the number of hits it can take before it is destroyed.
 
@@ -119,6 +122,8 @@ Goku hits the first dummy at `dummies[0] = 8` and the third dummy at `dummies[2]
 ---
 
 ### 2. Framework excercise
+
+![Greninja](src/assets/greninja.jpg)
 
 Using the [Poke Api](https://pokeapi.co), the goal is to be able to list a bunch of pokemons and see their original sprites and with a button, see it's shiny sprite, as well as their name, their available types and their abilities.
 
