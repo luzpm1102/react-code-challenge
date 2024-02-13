@@ -11,8 +11,9 @@ function App() {
       <Navbar />
       <main className="container">
         <Routes>
-          <Route path="/" element={<List />} />
+          <Route path="/" element={<Instructions />} />
           <Route path="/logical-exercise" element={<Response />} />
+          <Route path="/pokemon" element={<List />} />
           <Route path="/instructions" element={<Instructions />} />
           <Route path="/pokemon/:id" element={<SinglePokemon />} />
         </Routes>

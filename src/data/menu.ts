@@ -5,7 +5,7 @@ export const menuOptions = [
   },
   {
     label: "Pokemon list",
-    path: "/",
+    path: "/pokemon",
   },
   {
     label: "Logical Exercise",
