@@ -20,9 +20,10 @@ This challenge contains 3 exercises that will help us to understand your way of 
 3. Install the dependencies, run the `dev` script and go to: `http://localhost:5173/`
 4. To start the challenge perform the first commit with the `author` change
 >
-> We will consider this commit as the start of the test, you will have 120 min to complete this challenge.
->We will only consider the commits you make that are within the 120 min range, you will have only 8 minutes of margin (because of the time it may take to make the commits).
+> We will consider this commit as the start of the test, you will have 48 hours to complete this challenge.
+>We will only consider the commits you make that are within the 48 hours range, you will have only 30 min of margin (because of the time it may take to make the commits).
 5. Please, **DO NOT** use github copilot for this challenge, yes I know we use it daily but for this test, we want to evaluate your skills.
+6. When you finish the test, please send the link of your repo through email at isantiago@merakimx.com
 
 ---
 
@@ -40,6 +41,8 @@ In order to properly assess the candidate's skills, problem-solving abilities, c
 **Error handling:** We will check whether the code includes adequate error handling mechanisms to deal with unexpected input, exceptions and edge cases. We will evaluate the robustness of the code in handling potential errors and bugs.
 
 **Testing:** We will consider with higher priority candidates who add unit tests to their code, for us it is very important that they have knowledge of testing.
+
+**Commits:** We will consider with higher priority candidates who properly add commits to their code, we tried to perform good practices as much as we can.
 
 **Documentation:** We will evaluate the quality and completeness of the attached documentation or comments provided by the candidate. As well as whether the documentation effectively explains the purpose of the code, its functionality and how to use it.
 
@@ -126,7 +129,30 @@ Goku hits the first dummy at `dummies[0] = 8` and the third dummy at `dummies[2]
 
 ![Greninja](src/assets/greninja.jpg)
 
-Using the [Poke Api](https://pokeapi.co), the goal is to be able to list a bunch of pokemons, when clicking on a pokemon, we should be able to navigate to a dynamic route for the pokemon selected (based on pokemon id) and see their original sprites and with a button we want to see it's shiny sprite, as well as their name, their available types and their abilities.
+Using the [Poke Api](https://pokeapi.co) and [Firebase](https://firebase.google.com/docs/firestore), the goal is to create an application that allows users to interact with Pokémon data and save their favorite Pokémon to Firebase Firestore. 
+
+The application should include the following features:
+
+1. **List of Pokemons**: Display a list of Pokémon fetched from the [Poke Api](https://pokeapi.co).
+
+2. **Dynamic Routes**: Clicking on a Pokémon should navigate the user to a dynamic route for the selected Pokémon based on its ID.
+
+3. **Pokemon Details**: On the Pokémon detail page, display the following information:
+   - Original sprites
+   - Name of the Pokémon
+   - Available types
+   - Abilities
+   - Switch to view shiny sprite
+
+4. **Firebase Integration**: Implement Firebase Firestore to allow users to save their username and a list of their favorite Pokémon without requiring authentication. 
+
+5. **Save Button**: Include a button on the Pokémon detail page that allows users to save the Pokémon as one of their favorites. When clicked, the Pokémon's data along with the user's name should be saved to Firestore.
+
+6. **User's favorite pokemons**: Implement a different route where you can select a user, and see their favorite pokemons from firebase in a table that includes the same information as the point 3 (not navigation to another page is required).
+
+Your task is to create a web application that fulfills these requirements using React for the frontend and Firebase for the backend data storage. Make sure to handle errors gracefully and provide a user-friendly interface.
+
+Please document your code and provide clear instructions on how to run the application locally. You may also include any additional features or enhancements that you think would improve the user experience.
 
 **Acceptance criteria:**
 1. Must use [Redux Toolkit](https://redux-toolkit.js.org) as state management
