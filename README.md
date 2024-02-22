@@ -170,6 +170,9 @@ Please document your code and provide clear instructions on how to run the appli
 1. Current state must persist on window reload
 2. The user can change the number of pokemon to be displayed in the list
 
+**Note:**
+For this project you'll need to create a firebase project, feel free to leave or remove the firebase project credentials, it's up to you. If you leave them for make us life easy, we'll remind you to delete the project once we reviewed it.
+
 ---
 
 ### 3. SQL exercise (optional)
