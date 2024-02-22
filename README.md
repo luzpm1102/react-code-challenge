@@ -126,7 +126,7 @@ Goku hits the first dummy at `dummies[0] = 8` and the third dummy at `dummies[2]
 
 ![Greninja](src/assets/greninja.jpg)
 
-Using the [Poke Api](https://pokeapi.co), the goal is to be able to list a bunch of pokemons and see their original sprites and with a button, see it's shiny sprite, as well as their name, their available types and their abilities.
+Using the [Poke Api](https://pokeapi.co), the goal is to be able to list a bunch of pokemons, when clicking on a pokemon, we should be able to navigate to a dynamic route for the pokemon selected (based on pokemon id) and see their original sprites and with a button we want to see it's shiny sprite, as well as their name, their available types and their abilities.
 
 **Acceptance criteria:**
 1. Must use [Redux Toolkit](https://redux-toolkit.js.org) as state management
@@ -134,8 +134,13 @@ Using the [Poke Api](https://pokeapi.co), the goal is to be able to list a bunch
 3. If the pokemon already exists in the store, should retrieve it from there instead of performing an api call
 4. Only pokemon names are displayed within the list
 5. User should be able to switch between original sprite and shiny as desired
+6. Test the single pokemon route, to cover the following cases:
+    * Should show the pokemon sprite if pokemon exists in local storage
+    * Should retrieve pokemon sprite if doesn't exists in local storage
+    * Should be able to switch between original sprite and shiny sprite as desired.
 
 **Optional:**
+(if you don't want do to this, we don't care, no, really... we don't care 😅)
 1. Current state must persist on window reload
 2. The user can change the number of pokemon to be displayed in the list
 
