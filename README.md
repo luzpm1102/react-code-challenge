@@ -146,7 +146,7 @@ Using the [Poke Api](https://pokeapi.co), the goal is to be able to list a bunch
 
 ---
 
-### 3. SQL exercise
+### 3. SQL exercise (optional)
 
 Using HackerRank, we'll perform this challenge, it's optional so feel free to do it if you want, since SQL is not required for your position, may be helpful to have some extra knowledge.
 
