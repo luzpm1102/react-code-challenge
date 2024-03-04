@@ -1,4 +1,10 @@
 import { initializeApp } from 'firebase/app';
+import {
+  DocumentData,
+  QuerySnapshot,
+  collection,
+  getFirestore,
+} from 'firebase/firestore';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyB-zP7f26JflgWnMCRcPa4N6z7y0xjuOi0',
@@ -10,3 +16,13 @@ export const firebaseConfig = {
 };
 
 export const firebaseApp = initializeApp(firebaseConfig);
+
+export const db = getFirestore(firebaseApp);
+
+export const getCollectionRef = (collectionName: string) => {
+  return collection(db, collectionName);
+};
+
+export const formatData = (docs: QuerySnapshot<DocumentData, DocumentData>) => {
+  return docs.docs.map((doc) => doc.data());
+};

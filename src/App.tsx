@@ -4,6 +4,7 @@ import SinglePokemon from './modules/framework-exercise/views/SinglePokemon';
 import Navbar from './components/Navbar';
 import Instructions from './modules/Instructions';
 import Response from './modules/logical-exercise/views/Response';
+import Favorites from './modules/framework-exercise/views/Favorites';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path='/pokemon' element={<List />} />
           <Route path='/instructions' element={<Instructions />} />
           <Route path='/pokemon/:id' element={<SinglePokemon />} />
+          <Route path='/favorites' element={<Favorites />} />
         </Routes>
       </main>
     </Router>
