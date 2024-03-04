@@ -1,12 +1,5 @@
-import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
-import pokemonReducer from "../modules/framework-exercise/slice/pokemonSlice";
-
-export const store = configureStore({
-  reducer: {
-    pokemon: pokemonReducer,
-  },
-  devTools: true,
-});
+import { ThunkAction, Action } from '@reduxjs/toolkit';
+import store from '../modules/framework-exercise/store/index';
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>;
