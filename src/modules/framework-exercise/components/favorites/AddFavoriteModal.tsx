@@ -139,9 +139,14 @@ const AddFavoriteModal = ({
             fullWidth
             style={{ marginBottom: '20px' }}
           />
-          <Button variant='contained' onClick={handleSave}>
-            Save
-          </Button>
+          <div style={{ display: 'flex', gap: 5 }}>
+            <Button variant='contained' color='success' onClick={handleSave}>
+              Save
+            </Button>
+            <Button variant='contained' color='primary' onClick={onClose}>
+              Cancel
+            </Button>
+          </div>
         </div>
       </Modal>
       <Snackbar

@@ -1,7 +1,8 @@
 import { addDoc, getDocs, query, where } from 'firebase/firestore';
 import { formatData, getCollectionRef } from '.';
+import { User } from '../types';
 
-export const getAllUsers = async () => {
+export const getAllUsers = async (): Promise<User[] | string> => {
   const userRef = getCollectionRef('user');
   const userCol = query(userRef);
   try {
@@ -9,7 +10,7 @@ export const getAllUsers = async () => {
     if (docs.empty) {
       return 'List Empty';
     }
-    const usersData = formatData(docs);
+    const usersData = formatData(docs) as User[];
     return usersData;
   } catch (error) {
     console.error('Error fetching users:', error);

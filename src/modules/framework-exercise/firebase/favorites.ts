@@ -10,7 +10,9 @@ import { formatData, getCollectionRef } from '.';
 import { Pokemon } from '../types';
 import { addUser, getUserId } from './user';
 
-export const getUserFavorites = async (username: string) => {
+export const getUserFavorites = async (
+  username: string
+): Promise<Pokemon[] | null> => {
   const userId = await getUserId(username);
   if (!userId) {
     return null;
@@ -22,7 +24,7 @@ export const getUserFavorites = async (username: string) => {
     if (docs.empty) {
       return null;
     }
-    return formatData(docs);
+    return formatData(docs) as Pokemon[];
   } catch (error) {
     console.error('Error fetching user favorites:', error);
     return null;
