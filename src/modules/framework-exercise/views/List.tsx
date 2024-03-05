@@ -1,26 +1,18 @@
-import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import api from '../api';
 import { setPokemonList } from '../store/slice/pokemonSlice';
 import { useEffect, useState } from 'react';
-import {
-  ListItemText,
-  CircularProgress,
-  Typography,
-  List as ListUI,
-  ListItemIcon,
-  ListItemButton,
-  Pagination,
-} from '@mui/material';
+import { CircularProgress, Typography, Pagination, Input } from '@mui/material';
 import { getAllPokemons } from '../store/selectors';
-import PokeballIcon from '../../../assets/PokeBall_icon.png';
+import { Pokemon, PokemonData } from '../types';
+import ListUI from '../components/common/List';
 
 const List = () => {
   const { usePokemonListQuery } = api;
   const dispatch = useDispatch();
   const allPokemon = useSelector(getAllPokemons);
   const [currentPage, setCurrentPage] = useState(1);
-  const limit = 60;
+  const [limit, setLimit] = useState(60);
   const offset = (currentPage - 1) * limit;
 
   const { data, isLoading } = usePokemonListQuery({ offset, limit });
@@ -37,10 +29,15 @@ const List = () => {
     setCurrentPage(page);
   };
 
-  const gridStyle = {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
-    gap: '16px',
+  const dataFormat = (data: PokemonData[]): Pokemon[] => {
+    return data.map((item) => {
+      const parts = item.url.split('/');
+      const id = parts[parts.length - 2];
+      return {
+        id: Number(id),
+        name: item.name,
+      };
+    });
   };
 
   return (
@@ -48,27 +45,13 @@ const List = () => {
       <Typography variant='h4' gutterBottom>
         Pokemon List
       </Typography>
-      <ListUI style={gridStyle}>
-        {allPokemon.map((item) => {
-          const parts = item.url.split('/');
-          const id = parts[parts.length - 2];
-          return (
-            <ListItemButton
-              key={item.name}
-              component={Link}
-              to={`/pokemon/${id}`}>
-              <ListItemIcon>
-                <img
-                  src={PokeballIcon}
-                  alt='Pokeball'
-                  style={{ width: 24, height: 24 }}
-                />
-              </ListItemIcon>
-              <ListItemText primary={item.name} />
-            </ListItemButton>
-          );
-        })}
-      </ListUI>
+      <Input
+        type='number'
+        value={limit}
+        onChange={(e) => setLimit(Number(e.target.value))}
+      />
+
+      <ListUI data={dataFormat(allPokemon)} />
       <Pagination
         count={Math.ceil(data.count / limit)}
         page={currentPage}
