@@ -8,3 +8,6 @@ export const getState = (state: RootState): RootState => state;
 
 export const getPokemonSelected = (state: RootState): PokemonDetail =>
   state.pokemon.pokemonSelected;
+
+export const getFavorites = (state: RootState) => state.favorites.favorites;
+export const getUsers = (state: RootState) => state.user.users;

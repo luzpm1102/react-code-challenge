@@ -4,13 +4,11 @@ import { PokemonData, PokemonDetail } from '../../types';
 export interface InitialState {
   pokemonList: PokemonData[];
   pokemonSelected: PokemonDetail;
-  listQuantity: number;
 }
 
 const initialState: InitialState = {
   pokemonList: [],
   pokemonSelected: null,
-  listQuantity: 12,
 };
 
 const pokemonSlice = createSlice({

@@ -1,15 +1,13 @@
 export function fewerChangeSheets(array: number[]): number {
   let min = Infinity;
-  let prevIndex = 0;
 
-  for (let i = 1; i < array.length; i++) {
-    if (i - prevIndex <= 2) {
-      const difference = array[prevIndex] - array[i];
-      if (difference >= 0 && difference < min) {
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      const difference = array[i] - array[j];
+
+      if (difference > 0 && difference < min) {
         min = difference;
       }
-    } else {
-      prevIndex = i - 1;
     }
   }
 

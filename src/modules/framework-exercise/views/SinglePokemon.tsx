@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { Card, Typography, Button } from '@mui/material';
+import { useParams, useNavigate } from 'react-router-dom';
+import { Card, Typography, Button, IconButton } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import api from '../api';
 import { setPokemonSelected } from '../store/slice/pokemonSlice';
 import { getPokemonSelected } from '../store/selectors';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import AddFavoriteModal from '../components/favorites/AddFavoriteModal';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 const SinglePokemon = () => {
   const { id } = useParams();
@@ -17,6 +18,7 @@ const SinglePokemon = () => {
   const [favorite, setFavorite] = useState(false);
   const [openModal, setOpenModal] = useState(false);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!isLoading && data) {
@@ -46,6 +48,9 @@ const SinglePokemon = () => {
   return (
     <>
       <Card style={{ margin: 15, padding: 15 }}>
+        <IconButton onClick={() => navigate(-1)}>
+          <ArrowBackIcon />
+        </IconButton>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <img
             src={toggleImage}

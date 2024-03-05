@@ -42,3 +42,7 @@ export interface Response {
   count: number;
   results: PokemonData[];
 }
+
+export interface User {
+  username: string;
+}

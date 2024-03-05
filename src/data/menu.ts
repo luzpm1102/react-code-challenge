@@ -1,14 +1,18 @@
 export const menuOptions = [
   {
-    label: "Instructions",
-    path: "/instructions",
+    label: 'Instructions',
+    path: '/instructions',
   },
   {
-    label: "Pokemon list",
-    path: "/pokemon",
+    label: 'Pokemon list',
+    path: '/pokemon',
   },
   {
-    label: "Logical Exercise",
-    path: "/logical-exercise",
+    label: 'Favorites',
+    path: '/favorites',
+  },
+  {
+    label: 'Logical Exercise',
+    path: '/logical-exercise',
   },
 ];
